@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import fetchVacations from "../components/fetchVacations";
 import { useQuery } from "@tanstack/react-query";
+import Link from "next/link";
 
 export default function Home() {
   const displayVacations = async () => {
@@ -24,9 +25,9 @@ export default function Home() {
       <div>
         {data?.fetchedVacations.map((vacation: any, index: number) => (
           <div key={index}>
-            <div>{vacation.city}</div>
+            <Link href={`/vacations/${vacation.city}`}>{vacation.city}</Link>
             <div>{vacation.description}</div>
-            <div>
+            {/* <div>
               {vacation.imageCollection.items.map(
                 (image: any, index: number) => {
                   return (
@@ -36,7 +37,7 @@ export default function Home() {
                   );
                 }
               )}
-            </div>
+            </div> */}
           </div>
         ))}
       </div>
