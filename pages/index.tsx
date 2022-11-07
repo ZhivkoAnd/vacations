@@ -5,12 +5,10 @@ import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 
 export default function Home() {
-  const displayVacations = async () => {
-    const responce = await fetchVacations();
-    return responce;
-  };
-
-  const { data, isLoading, error } = useQuery(["vacations"], displayVacations);
+  const { data, isLoading, error } = useQuery(
+    ["vacation-cities"],
+    fetchVacations
+  );
 
   if (isLoading) return <div>Loading</div>;
   if (error) return <div>Error</div>;
