@@ -24,18 +24,7 @@ export default function Home() {
         {data?.fetchedVacations.map((vacation: any, index: number) => (
           <div key={index}>
             <Link href={`/vacations/${vacation.city}`}>{vacation.city}</Link>
-            <div>{vacation.description}</div>
-            {/* <div>
-              {vacation.imageCollection.items.map(
-                (image: any, index: number) => {
-                  return (
-                    <div key={index}>
-                      <img src={image.url} className="image" />
-                    </div>
-                  );
-                }
-              )}
-            </div> */}
+            {/* <div>{vacation.description}</div> */}
           </div>
         ))}
       </div>
